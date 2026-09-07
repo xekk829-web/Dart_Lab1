@@ -8,11 +8,23 @@ int square(int x) => x * x;
 double half(double x) => x / 2;
 
 void describePet({
-  required String name, // required — параметр обязателен, без него ошибка компиляции
+  required String
+  name, // required — параметр обязателен, без него ошибка компиляции
   String species = 'кот', // Параметры без required — опциональны, можно задать значение по умолчанию
   int age = 0,
 }) {
   print('$name - $species, возраст $age');
+}
+
+String repeat(
+  String text, [
+  int times = 2, // Квадратные скобки [] обозначают необязательный позиционный параметр
+]) {
+  String result = '';
+  for (int i = 0; i < times; i++) {
+    result += text;
+  }
+  return result;
 }
 
 void main(List<String> arguments) {
@@ -23,6 +35,18 @@ void main(List<String> arguments) {
   print(half(100));
   describePet(name: 'Барсик', age: 3);
   describePet(name: 'Шарик', species: 'пёс');
+  print(repeat('ha'));
+  print(repeat('ha', 3));
+
+  List<int> numbers = [3, 1, 4, 1, 5, 9];
+  numbers.sort((a, b) => b - a); // сортировка по убыванию
+  print(numbers);
+
+  List<String> names = ['Артём', 'Мария', 'Иван'];
+  List<String> upper = names
+      .map((name) => name.toUpperCase())
+      .toList();
+  print(upper);
 
   // step 2
   print('');
