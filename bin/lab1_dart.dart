@@ -1,6 +1,32 @@
 import 'package:lab1_dart/lab1_dart.dart' as lab1_dart;
 
+String greet(String name) {
+  return 'Привет, $name!';
+}
+
+int square(int x) => x * x;
+double half(double x) => x / 2;
+
+void describePet({
+  required String name, // required — параметр обязателен, без него ошибка компиляции
+  String species = 'кот', // Параметры без required — опциональны, можно задать значение по умолчанию
+  int age = 0,
+}) {
+  print('$name - $species, возраст $age');
+}
+
 void main(List<String> arguments) {
+  // step 3
+  print(greet('Артём'));
+  print(greet('Мария'));
+  print(square(100));
+  print(half(100));
+  describePet(name: 'Барсик', age: 3);
+  describePet(name: 'Шарик', species: 'пёс');
+
+  // step 2
+  print('');
+  print('');
   String name = 'Аскар';
   int age = 17;
   double height = 1.84;
