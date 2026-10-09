@@ -1,5 +1,3 @@
-import 'package:lab1_dart/lab1_dart.dart' as lab1_dart;
-
 String greet(String name) {
   return 'Привет, $name!';
 }
@@ -47,6 +45,9 @@ void main(List<String> arguments) {
       .map((name) => name.toUpperCase())
       .toList();
   print(upper);
+
+  List<String> longNames = names.where((name) => name.length > 4).toList();
+  print(longNames);
 
   // step 2
   print('');
